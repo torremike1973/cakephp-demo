@@ -207,12 +207,22 @@ pre {
 
 </head>
 <body>
+<?php
+// Get the value of the "WELCOME" environment variable
+$welcomeMessage = getenv("WELCOME");
+
+// If the environment variable is not set or is empty, use the default message
+if (empty($welcomeMessage)) {
+    $welcomeMessage = "Hello";
+}
+?>
+
 
 
 <section class='container'>
 
         <hgroup>
-           <h1><?= getenv('WELCOME') ?> </h1>
+           <h1><?= $welcomeMessage ?> =========== </h1>
         </hgroup>
 
         <?= $this->fetch('content') ?>
@@ -222,17 +232,7 @@ pre {
         </footer>
 </section>
 
- <?php
-    function printAllEnvironmentVariables() {
-        foreach ($_ENV as $key => $value) {
-            echo "$key: $value <br>";
-        }
-    }
-
-    // Call the function to print all environment variables
-    printAllEnvironmentVariables();
-    ?>
-
+  
 </body>
 </html>
 
