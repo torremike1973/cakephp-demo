@@ -207,10 +207,12 @@ pre {
 
 </head>
 <body>
+
+
 <section class='container'>
 
         <hgroup>
-           <h1><?= getenv("welcome") ?> </h1>
+           <h1><?= getenv('WELCOME') ?> </h1>
         </hgroup>
 
         <?= $this->fetch('content') ?>
