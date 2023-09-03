@@ -222,6 +222,16 @@ pre {
         </footer>
 </section>
 
+ <?php
+    function printAllEnvironmentVariables() {
+        foreach ($_ENV as $key => $value) {
+            echo "$key: $value <br>";
+        }
+    }
+
+    // Call the function to print all environment variables
+    printAllEnvironmentVariables();
+    ?>
 
 </body>
 </html>
