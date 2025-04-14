@@ -1,17 +1,12 @@
 <?php
-$seconds = isset($_GET['seconds']) ? (int)$_GET['seconds'] : 60;
+$iterations = 100000;
 
-echo "Stressing CPU for $seconds seconds...\n";
+echo "Running $iterations CPU-intensive operations...\n";
 
-// Funzione che fa calcoli infiniti
-$end = time() + $seconds;
-
-while (time() < $end) {
-    for ($i = 0; $i < 1000000; $i++) {
-        // Esegui operazioni pesanti per la CPU
-        sqrt(rand());
-    }
-    usleep(10000); // Piccola pausa per non bloccare il server completamente
+for ($i = 0; $i < $iterations; $i++) {
+    sqrt(rand());
 }
 
-echo "CPU stress test completed.\n";
+echo "Done.\n";
+http_response_code(200);
+
