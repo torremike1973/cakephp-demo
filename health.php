@@ -1,4 +1,5 @@
 <?php
+// Mike Torre - initial code comment test
 
 $servername = getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_HOST");
 $username = getenv("DATABASE_USER");
